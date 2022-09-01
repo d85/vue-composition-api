@@ -24,10 +24,26 @@
 </template>
 
 <script setup>
-  import { reactive, computed, watch } from 'vue'
+  /*
+    imports
+  */
+
+  import { reactive, computed, watch, onMounted } from 'vue'
+  
+  /*
+    app title
+  */
 
   const appTitle = 'My Counter App'
 
+  onMounted(() => {
+    console.log('Do stuff related to app title')
+  })
+
+  /*
+    counter
+  */
+ 
   const counterData = reactive({
     count: 0,
     title: 'My Counter'
@@ -54,6 +70,11 @@
   const decreaseCounter = () => {
     counterData.count--
   }
+
+  onMounted(() => {
+    console.log('Do stuff related to Counter')
+  })
+
 </script>
 
 <style>
